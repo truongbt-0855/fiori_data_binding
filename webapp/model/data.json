@@ -1,3 +1,4 @@
 {
-	"greetingText" : "Hi, my name is Harry Hawk"
+	"greetingText" : "Hi, my name is Harry Hawk",
+    "good_bye": "Say good bye"
 }

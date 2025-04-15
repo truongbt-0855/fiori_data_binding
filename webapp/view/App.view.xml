@@ -1,6 +1,6 @@
 <mvc:View
-    xmlns='sap.m'
-    xmlns:mvc='sap.ui.core.mvc'
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
 >
-    <Text text="Hi hello xxx"/>
+    <Text text="{data_json>/greetingText}" />
 </mvc:View>

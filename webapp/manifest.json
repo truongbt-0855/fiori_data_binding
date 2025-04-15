@@ -34,7 +34,7 @@
 			"id": "app"
 		},
 		"models": {
-			"": {
+			"data_json": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "./model/data.json"
 			}
