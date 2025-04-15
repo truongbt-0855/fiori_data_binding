@@ -32,6 +32,12 @@
 			"viewName": "ui5.databinding.view.App",
 			"type": "XML",
 			"id": "app"
+		},
+		"models": {
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "./model/data.json"
+			}
 		}
 	}
 }
