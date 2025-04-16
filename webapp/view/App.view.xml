@@ -72,16 +72,64 @@
                     enabled="{data_json>/enabled}"
                     id="salesAmount"
                     value="{
-                        parts: [
-                            {path: 'data_json>/salesAmount'},
-                            {path: 'data_json>/currencyCode'}
-                        ],
+                        parts: [{
+                            path: 'data_json>/salesAmount'
+                        }, {
+                            path: 'data_json>/currencyCode'
+                        }],
                         type: 'Currency',
-                        formatOptions: {showMeasure: false}
+                        formatOptions: {
+                            showMeasure: false
+                        }
                     }"
                     width="200px"
                 />
             </l:VerticalLayout>
         </content>
+    </Panel>
+    <Panel
+        headerText="{data_i18n>panel3HeaderText}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+    >
+        <List
+            headerText="{data_i18n>productListTitle}"
+            items="{products>/Products}"
+        >
+            <items>
+                <ObjectListItem
+                    title="{products>ProductName}"
+                    number="{
+                        parts: [{
+                            path: 'products>UnitPrice'
+                        }, {
+                            path: 'data_json>/currencyCode'
+                        }],
+                        type: 'Currency',
+                        formatOptions: {
+                            showMeasure: false
+                        }
+                    }"
+                    numberUnit="{data_json>/currencyCode}"
+                >
+                    <attributes>
+                        <ObjectAttribute text="{products>QuantityPerUnit}" />
+                        <ObjectAttribute
+                            title="{data_i18n>stockValue}"
+                            text="{
+                                parts: [{
+                                    path: 'products>UnitPrice'
+                                }, {
+                                    path: 'products>UnitsInStock'
+                                }, {
+                                    path: 'data_json>/currencyCode'
+                                }],
+                                formatter: '.formatStockValue'
+                            }"
+                        />
+                    </attributes>
+                </ObjectListItem>
+            </items>
+        </List>
     </Panel>
 </mvc:View>
