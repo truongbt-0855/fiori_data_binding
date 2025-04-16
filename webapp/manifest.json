@@ -37,6 +37,17 @@
 			"data_json": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "./model/data.json"
+			},
+			"data_i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ui5.databinding.i18n.i18n",
+					"supportedLocales": [
+						"",
+						"vi"
+					],
+					"fallbackLocale": ""
+				}
 			}
 		}
 	}

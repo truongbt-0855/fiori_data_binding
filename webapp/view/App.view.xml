@@ -3,18 +3,18 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:form="sap.ui.layout.form"
 >
-<Panel headerText="{data_json>/panelHeaderText}" class="sapUiResponsiveMargin" width="auto">
+<Panel headerText="{data_i18n>panelHeaderText}" class="sapUiResponsiveMargin" width="auto">
     <form:SimpleForm
         editable="true"
         layout="ColumnLayout"
     >
         <Label text="First Name" />
-        <Input value="{data_json>/firstName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
+        <Input value="{data_i18n>firstName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
         <Label text="Last Name" />
-        <Input value="{data_json>/lastName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
+        <Input value="{data_i18n>lastName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
         <Label text="Enabled" />
         <CheckBox selected="{data_json>/enabled}" />
     </form:SimpleForm>
-    <Text text="{data_json>/firstName}" />
+    <Text text="{data_json>/greetingText}" />
 </Panel>
 </mvc:View>
