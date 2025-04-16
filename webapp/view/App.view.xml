@@ -1,6 +1,20 @@
 <mvc:View
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
 >
-    <Text text="{data_json>/greetingText}" />
+<Panel headerText="{data_json>/panelHeaderText}" class="sapUiResponsiveMargin" width="auto">
+    <form:SimpleForm
+        editable="true"
+        layout="ColumnLayout"
+    >
+        <Label text="First Name" />
+        <Input value="{data_json>/firstName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
+        <Label text="Last Name" />
+        <Input value="{data_json>/lastName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
+        <Label text="Enabled" />
+        <CheckBox selected="{data_json>/enabled}" />
+    </form:SimpleForm>
+    <Text text="{data_json>/firstName}" />
+</Panel>
 </mvc:View>
