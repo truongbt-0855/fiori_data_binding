@@ -16,7 +16,7 @@ sap.ui.define([
         init() {
             UIComponent.prototype.init.apply(this, arguments);
             
-            this.getModel('data_json').setDefaultBindingMode(BindingMode.OneWay);
+            // this.getModel('data_json').setDefaultBindingMode(BindingMode.OneWay);
         }
     })
 })

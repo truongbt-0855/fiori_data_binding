@@ -68,7 +68,7 @@
                     text="{data_i18n>salesAmount}:"
                 />
                 <Input
-                    description="{/currencyCode}"
+                    description="{data_json>/currencyCode}"
                     enabled="{data_json>/enabled}"
                     id="salesAmount"
                     value="{

@@ -2,6 +2,8 @@
 	"greetingText" : "Hi, my name is Harry Hawk",
     "good_bye": "Say good bye",
 	"enabled" : true,
+	"firstName": "Harry",
+	"lastName": "Hawk",
     "address": {
 		"street": "Dietmar-Hopp-Allee 16",
 		"city": "Walldorf",
@@ -9,5 +11,5 @@
 		"country": "Germany"
 	},
 	"salesAmount": 12345.6789,
-	"currencyCode": "VND"
+	"currencyCode": "EUR"
 }
