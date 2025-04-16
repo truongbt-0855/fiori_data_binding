@@ -2,19 +2,51 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
 >
-<Panel headerText="{data_i18n>panelHeaderText}" class="sapUiResponsiveMargin" width="auto">
-    <form:SimpleForm
-        editable="true"
-        layout="ColumnLayout"
+    <Panel
+        headerText="{data_i18n>panelHeaderText}"
+        class="sapUiResponsiveMargin"
+        width="auto"
     >
-        <Label text="First Name" />
-        <Input value="{data_i18n>firstName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
-        <Label text="Last Name" />
-        <Input value="{data_i18n>lastName}" valueLiveUpdate="true" width="200px" enabled="{data_json>/enabled}" />
-        <Label text="Enabled" />
-        <CheckBox selected="{data_json>/enabled}" />
-    </form:SimpleForm>
-    <Text text="{data_json>/greetingText}" />
-</Panel>
+        <form:SimpleForm
+            editable="true"
+            layout="ColumnLayout"
+        >
+            <Label text="First Name" />
+            <Input
+                value="{data_i18n>firstName}"
+                valueLiveUpdate="true"
+                width="200px"
+                enabled="{data_json>/enabled}"
+            />
+            <Label text="Last Name" />
+            <Input
+                value="{data_i18n>lastName}"
+                valueLiveUpdate="true"
+                width="200px"
+                enabled="{data_json>/enabled}"
+            />
+            <Label text="Enabled" />
+            <CheckBox selected="{data_json>/enabled}" />
+        </form:SimpleForm>
+        <Text text="{data_json>/greetingText}" />
+    </Panel>
+    <Panel
+        class="sapUiResponsiveMargin"
+        headerText="{data_i18n>panel2HeaderText}"
+        width="auto"
+    >
+        <content>
+            <l:VerticalLayout>
+                <Label labelFor="address" text="{data_i18n>address}:"></Label>
+                <FormattedText
+                    class="sapUiSmallMarginBottom"
+                    id="address"
+                    htmlText="{data_json>/address/stress}&lt;br>{data_json>/address/zip} {data_json>/address/city}&lt;br>{data_json>/address/country}"
+                    width="200px"
+                />
+            </l:VerticalLayout>
+        </content>
+    </Panel>
 </mvc:View>
