@@ -98,6 +98,8 @@
         >
             <items>
                 <ObjectListItem
+                    press=".onItemSelected"
+                    type="Active"
                     title="{products>ProductName}"
                     number="{
                         parts: [{
@@ -132,4 +134,34 @@
             </items>
         </List>
     </Panel>
+    <Panel
+        id="productDetailsPanel"
+        headerText="{data_i18n>panel4HeaderText}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+    >
+        <form:SimpleForm
+            editable="true"
+            layout="ColumnLayout"
+        >
+            <Label text="{data_i18n>ProductId}" />
+            <Input value="{products>ProductId}" />
+
+            <Label text="{data_i18n>ProductName}" />
+            <Input value="{products>ProductName}" />
+
+            <Label text="{data_i18n>QuantityPerUnit}" />
+            <Input value="{products>QuantityPerUnit}" />
+
+            <Label text="{data_i18n>UnitPrice}" />
+            <Input value="{products>UnitPrice}" />
+
+            <Label text="{data_i18n>UnitsInStock}" />
+            <Input value="{products>UnitsInStock}" />
+
+            <Label text="{data_i18n>Discontinued}" />
+            <CheckBox selected="{products>Discontinued}" />
+        </form:SimpleForm>
+    </Panel>
+    <Text text="{data_json}" />
 </mvc:View>
