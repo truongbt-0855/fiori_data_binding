@@ -93,6 +93,26 @@
         width="auto"
     >
         <List
+            id="ProductList"
+            headerText="{data_i18n>productListTitle}"
+            items="{
+                path: 'list_product>/Products',
+                factory: '.productListFactory'
+            }"
+        >
+            <dependents>
+                <core:Fragment
+                    fragmentName="ui5.databinding.view.ProductSimple"
+                    type="XML"
+                />
+                <core:Fragment
+                    fragmentName="ui5.databinding.view.ProductExtended"
+                    type="XML"
+                />
+            </dependents>
+        </List>
+
+        <List
             headerText="{data_i18n>productListTitle}"
             items="{list_product>/Products}"
         >
@@ -116,7 +136,9 @@
                     numberUnit="{data_json>/currencyCode}"
                 >
                     <attributes>
-                        <ObjectAttribute text="{list_product>QuantityPerUnit}" />
+                        <ObjectAttribute
+                            text="{list_product>QuantityPerUnit}"
+                        />
                         <ObjectAttribute
                             title="{data_i18n>stockValue}"
                             text="{
