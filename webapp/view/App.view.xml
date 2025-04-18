@@ -94,16 +94,16 @@
     >
         <List
             headerText="{data_i18n>productListTitle}"
-            items="{products>/Products}"
+            items="{list_product>/Products}"
         >
             <items>
                 <ObjectListItem
                     press=".onItemSelected"
                     type="Active"
-                    title="{products>ProductName}"
+                    title="{list_product>ProductName}"
                     number="{
                         parts: [{
-                            path: 'products>UnitPrice'
+                            path: 'list_product>UnitPrice'
                         }, {
                             path: 'data_json>/currencyCode'
                         }],
@@ -112,17 +112,18 @@
                             showMeasure: false
                         }
                     }"
+                    numberState="{= ${list_product>UnitPrice} > ${data_json>/priceThreshold} ? 'Error' : 'Success'}"
                     numberUnit="{data_json>/currencyCode}"
                 >
                     <attributes>
-                        <ObjectAttribute text="{products>QuantityPerUnit}" />
+                        <ObjectAttribute text="{list_product>QuantityPerUnit}" />
                         <ObjectAttribute
                             title="{data_i18n>stockValue}"
                             text="{
                                 parts: [{
-                                    path: 'products>UnitPrice'
+                                    path: 'list_product>UnitPrice'
                                 }, {
-                                    path: 'products>UnitsInStock'
+                                    path: 'list_product>UnitsInStock'
                                 }, {
                                     path: 'data_json>/currencyCode'
                                 }],
@@ -145,22 +146,22 @@
             layout="ColumnLayout"
         >
             <Label text="{data_i18n>ProductId}" />
-            <Input value="{products>ProductId}" />
+            <Input value="{list_product>ProductId}" />
 
             <Label text="{data_i18n>ProductName}" />
-            <Input value="{products>ProductName}" />
+            <Input value="{list_product>ProductName}" />
 
             <Label text="{data_i18n>QuantityPerUnit}" />
-            <Input value="{products>QuantityPerUnit}" />
+            <Input value="{list_product>QuantityPerUnit}" />
 
             <Label text="{data_i18n>UnitPrice}" />
-            <Input value="{products>UnitPrice}" />
+            <Input value="{list_product>UnitPrice}" />
 
             <Label text="{data_i18n>UnitsInStock}" />
-            <Input value="{products>UnitsInStock}" />
+            <Input value="{list_product>UnitsInStock}" />
 
             <Label text="{data_i18n>Discontinued}" />
-            <CheckBox selected="{products>Discontinued}" />
+            <CheckBox selected="{list_product>Discontinued}" />
         </form:SimpleForm>
     </Panel>
     <Text text="{data_json}" />

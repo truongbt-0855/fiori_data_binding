@@ -24,10 +24,10 @@ sap.ui.define([
 
         onItemSelected(oEvent) {
             const oSelectItem = oEvent.getSource();
-            const oContext = oSelectItem.getBindingContext('products');
+            const oContext = oSelectItem.getBindingContext('list_product');
             const sPath = oContext.getPath();
             const oProductDetailPanel = this.byId('productDetailsPanel');
-            oProductDetailPanel.bindElement({ path: sPath, model: 'products' })
+            oProductDetailPanel.bindElement({ path: sPath, model: 'list_product' })
         }
     });
 });

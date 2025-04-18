@@ -39,7 +39,7 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "./model/data.json"
 			},
-			"products" : {
+			"list_product" : {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "./model/products.json"
 			},
